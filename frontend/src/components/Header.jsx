@@ -10,7 +10,8 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Button
 } from 'reactstrap';
 
 function Header(props) {
@@ -20,7 +21,7 @@ function Header(props) {
 
   return (
     <div>
-      <Navbar color="primary" dark expand="md">
+      <Navbar color="secondary" dark expand="md">
         <NavbarBrand href="/">Analyze</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -50,7 +51,7 @@ function Header(props) {
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <NavLink href="/option/" style={{ color: 'red' }}>Fale Conosco!</NavLink>
+          <Button outline color="info">Fale conosco !</Button>{''}
         </Collapse>
       </Navbar>
     </div>
