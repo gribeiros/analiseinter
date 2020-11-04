@@ -3,13 +3,15 @@ const { Model, DataTypes } = require('sequelize');
 
 class results extends Model {
   static init(sequelize) {
-    super.init({},
+    super.init({
+      
+    },
       {
         sequelize
       })
   }
   static associate(models) {
-    this.
+    
 
   }
 }
