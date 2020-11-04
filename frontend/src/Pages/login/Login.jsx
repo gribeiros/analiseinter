@@ -18,7 +18,7 @@ function Loginx() {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link className="nav-link" to={"/sign-in"}>Entrar</Link>
+                <Link className="nav-link" to={"/login"}>Entrar</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to={"/sign-up"}>Registrar</Link>
