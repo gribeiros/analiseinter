@@ -1,26 +1,31 @@
 const { Model, DataTypes } = require('sequelize');
 
-class user extends Model {
+class User extends Model {
   static init(sequelize) {
     super.init({
       name: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
       },
       email: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false,
         validate: {
           isEmail: true
         }
       },
-      password: {
+      password_hash: {
         type: DataTypes.STRING,
-        allowNull: true,
+        allowNull: false
+      },
+      cpf: {
+        type: DataTypes.NUMBER,
+        allowNull: false,
       }
     },
       {
-        sequelize
+        sequelize,
+        tableName: 'user'
       })
   }
   static associate(models) {
@@ -28,4 +33,4 @@ class user extends Model {
   }
 }
 
-module.exports = user;
+module.exports = User;

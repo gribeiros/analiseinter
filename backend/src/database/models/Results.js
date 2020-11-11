@@ -1,19 +1,17 @@
-  
 const { Model, DataTypes } = require('sequelize');
 
-class results extends Model {
+class Results extends Model {
   static init(sequelize) {
     super.init({
-      
+
     },
       {
-        sequelize
+        sequelize,
+        tableName:'results'
       })
   }
   static associate(models) {
-    
-
   }
 }
 
-module.exports = results;
+module.exports = Results;

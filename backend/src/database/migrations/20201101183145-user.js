@@ -18,8 +18,12 @@ module.exports = {
         allowNull: false,
 
       },
-      password: {
-        type: Sequelize.FLOAT,
+      password_hash: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      cpf: {
+        type: Sequelize.INTEGER,
         allowNull: false,
       }
     })
