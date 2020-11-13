@@ -2,8 +2,8 @@ import React from 'react';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import Login from "../../components/login.component";
-import SignUp from "../../components/signup.component";
+import Login from "./login.component";
+import SignUp from "./signup";
 
 import './Login.css';
 
@@ -12,7 +12,7 @@ function Loginx() {
   return (
   <Router>
     <div className="Loginc">
-      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
           <Link className="navbar-brand">Team Brabus</Link>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -36,7 +36,8 @@ function Loginx() {
           </Switch>
         </div>
       </div>
-    </div></Router>
+    </div>
+    </Router>
   );
 }
 

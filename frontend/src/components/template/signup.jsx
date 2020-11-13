@@ -17,6 +17,11 @@ export default class SignUp extends Component {
                 </div>
 
                 <div className="form-group">
+                    <label>CPF</label>
+                    <input type="CPF" className="form-control" />
+                </div>
+
+                <div className="form-group">
                     <label>Senha</label>
                     <input type="password" className="form-control" />
                 </div>
