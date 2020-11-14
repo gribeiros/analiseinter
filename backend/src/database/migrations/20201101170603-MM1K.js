@@ -62,7 +62,8 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false,
       }
-    })
+    },
+    )
   },
 
   down: async (queryInterface, Sequelize) => {

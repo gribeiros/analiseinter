@@ -29,7 +29,7 @@ class User extends Model {
       })
   }
   static associate(models) {
-
+    this.hasMany(models.Results, { foreignKey: 'user_id', as: 'results' })
   }
 }
 

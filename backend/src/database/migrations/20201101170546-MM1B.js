@@ -14,7 +14,7 @@ module.exports = {
         defaultValue: 'mm1b',
         allowNull: false,
       },
-      lambNM: {
+      lamb_n_m: {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
@@ -28,12 +28,12 @@ module.exports = {
         allowNull: false,
       }
       ,
-      pZero: {
+      p_zero: {
         type: Sequelize.FLOAT,
         allowNull: false,
       }
       ,
-      pN: {
+      p_n: {
         type: Sequelize.FLOAT,
         allowNull: false,
       }
@@ -48,7 +48,7 @@ module.exports = {
         allowNull: false,
       }
       ,
-      enW: {
+      en_w: {
         type: Sequelize.FLOAT,
         allowNull: false,
       }

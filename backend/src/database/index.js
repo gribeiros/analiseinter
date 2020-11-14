@@ -4,7 +4,7 @@ const dbConfig = require("./config/config");
 
 //Lists
 const Mm1 = require('../database/models/Mm1')
-const Mm1b = require('../database/models/Mm1b')
+const Mmmoneb = require('../database/models/Mmmoneb')
 const Mm1k = require('../database/models/Mm1k')
 const Mminfinito = require('../database/models/Mminfinito')
 const Mminfinitok = require('../database/models/Mminfinitok')
@@ -26,26 +26,24 @@ try {
 /*Init Models*/
 
 Mm1.init(connection);
-Mm1b.init(connection);
+Mmmoneb.init(connection);
 Mm1k.init(connection);
 Mminfinito.init(connection);
 Mminfinitok.init(connection);
 Mmm.init(connection);
 Mmmb.init(connection);
-
 Results.init(connection);
 User.init(connection);
 
 /*Init Associates*/
 
 Mm1.associate(connection.models);
-Mm1b.associate(connection.models);
+Mmmoneb.associate(connection.models);
 Mm1k.associate(connection.models);
 Mminfinito.associate(connection.models);
 Mminfinitok.associate(connection.models);
 Mmm.associate(connection.models);
 Mmmb.associate(connection.models);
-
 Results.associate(connection.models);
 User.associate(connection.models);
 

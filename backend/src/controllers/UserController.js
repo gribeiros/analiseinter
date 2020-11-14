@@ -1,6 +1,6 @@
 const User = require('../database/models/User')
 const bcrypt = require('bcrypt');
-const { findOne } = require('../database/models/User');
+
 
 module.exports = {
     async store(req, res) {
@@ -51,6 +51,13 @@ module.exports = {
         }
 
 
+    },
+
+    async userResults(req, res) {
+        const { id } = req.params
+        const user = await User.findByPk(id, { include: { association: 'results' }, attributes: { exclude: 'password_hash' } })
+        delete user.password_hash;
+        return res.status(200).json(user.results)
     }
 
 }

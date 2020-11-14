@@ -16,7 +16,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE'
       },
-      mm1: {
+      mm1_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: { model: 'mm1', key: 'id' },
@@ -24,7 +24,7 @@ module.exports = {
         onDelete: 'CASCADE'
       }
       ,
-      mm1b: {
+      mm1b_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: { model: 'mm1b', key: 'id' },
@@ -32,7 +32,7 @@ module.exports = {
         onDelete: 'CASCADE'
       }
       ,
-      mm1k: {
+      mm1k_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: { model: 'mm1k', key: 'id' },
@@ -40,7 +40,7 @@ module.exports = {
         onDelete: 'CASCADE'
       }
       ,
-      mminfinitok: {
+      mminfinitok_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: { model: 'mminfinitok', key: 'id' },
@@ -48,7 +48,7 @@ module.exports = {
         onDelete: 'CASCADE'
       }
       ,
-      mminfinito: {
+      mminfinito_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: { model: 'mminfinito', key: 'id' },
@@ -56,7 +56,7 @@ module.exports = {
         onDelete: 'CASCADE'
       }
       ,
-      mmm: {
+      mmm_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: { model: 'mmm', key: 'id' },
@@ -64,7 +64,7 @@ module.exports = {
         onDelete: 'CASCADE'
       }
       ,
-      mmmb: {
+      mmmb_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: { model: 'mmmb', key: 'id' },
