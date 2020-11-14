@@ -10,5 +10,6 @@ routes.get('/', (req, res) => {
 
 routes.post('/users', UserController.store);
 routes.post('/user/login', UserController.login);
+routes.get('/user/:cpf', UserController.findOne);
 
 module.exports = routes;

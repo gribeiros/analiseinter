@@ -1,5 +1,6 @@
 const User = require('../database/models/User')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
+const { findOne } = require('../database/models/User');
 
 module.exports = {
     async store(req, res) {
@@ -36,8 +37,20 @@ module.exports = {
             return res.status(401).json({ error: 'E-mail ou senha errados' })
         }
 
+    },
+
+    async findOne(req, res) {
+        const { cpf } = req.params
+
+        const user = await User.findOne({ where: { cpf: cpf } })
+
+        if (user) {
+            return res.status(200).json(user);
+        } else {
+            return res.status(404).json({ error: 'Not Found' });
+        }
+
+
     }
-
-
 
 }
