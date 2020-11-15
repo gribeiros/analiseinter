@@ -70,4 +70,14 @@
     color: #167bff;
   }
 
+  .registrar{
+    padding: 15px;
+    width:300px;
+    margin: auto;
+    border: 1px solid black;
   
+  }
+
+  .container{
+    padding: 50px;
+  }
