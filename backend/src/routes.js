@@ -22,6 +22,6 @@ routes.post('/list/mmm', ResultController.saveMmm)
 routes.post('/list/mmmb', ResultController.saveMmmb)
 
 routes.get('/results/:id/list', ResultController.findByList);
-routes.get('/results', ResultController.index)
+routes.get('/results/:id', ResultController.index)
 
 module.exports = routes;

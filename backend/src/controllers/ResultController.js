@@ -13,7 +13,9 @@ const Mmmb = require('../database/models/Mmmb')
 
 module.exports = {
     async index(req, res) {
+        const { id } = req.params
         const results = await Results.findAll({
+            where: { user_id: id },
             include: [
                 {
                     model: Mmmoneb,
@@ -59,14 +61,16 @@ module.exports = {
                 },
 
             ],
-            attributes: { exclude: ['mm1_id', 'mm1b_id', 'mm1k_id', 'mminfinito_id', 'mminfinitok_id', 'mmm_id', 'mmmb_id', 'mm1', 'mmmoneb', 'id'] }
+            attributes: { exclude: ['mm1_id', 'mm1b_id', 'mm1k_id', 'mminfinito_id', 'mminfinitok_id', 'mmm_id', 'mmmb_id', 'mm1', 'mmmoneb'] }
         })
         return res.status(200).json(results)
     },
     async findByList(req, res) {
         const { id } = req.params
+        const { name } = req.body
+
         const results = await Results.findAll({
-            where: { user_id: id, name: 'mm1k' },
+            where: { user_id: id, name: name },
             include: [
                 {
                     model: Mmmoneb,
@@ -112,7 +116,7 @@ module.exports = {
                 },
 
             ],
-            attributes: { exclude: ['mm1_id', 'mm1b_id', 'mm1k_id', 'mminfinito_id', 'mminfinitok_id', 'mmm_id', 'mmmb_id', 'mm1', 'mmmoneb', 'id'] }
+            attributes: { exclude: ['mm1_id', 'mm1b_id', 'mm1k_id', 'mminfinito_id', 'mminfinitok_id', 'mmm_id', 'mmmb_id', 'mm1', 'mmmoneb'] }
         })
         return res.status(200).json(results)
     },
