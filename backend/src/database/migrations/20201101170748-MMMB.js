@@ -9,11 +9,6 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      name: {
-        type: Sequelize.STRING,
-        defaultValue: 'mmmb',
-        allowNull: false,
-      },
       ro: {
         type: Sequelize.FLOAT,
         allowNull: false,

@@ -9,11 +9,6 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      name: {
-        type: Sequelize.STRING,
-        defaultValue: 'mminfinitok',
-        allowNull: false,
-      },
       lambdan: {
         type: Sequelize.FLOAT,
         allowNull: false,
