@@ -23,7 +23,7 @@ module.exports = {
         allowNull: false,
       }
       ,
-      en: {
+      eN: {
         type: Sequelize.STRING,
         allowNull: false,
       }

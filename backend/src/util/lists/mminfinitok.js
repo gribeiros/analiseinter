@@ -1,20 +1,20 @@
 
 /* 
 Alunos:  Aurélia Lima
-		 Tyrone Alô
-		 Raí Oliveira
-		 Gustavo Ribeiro
-		 Gabriel Alves
-		 Willian Evangelista Silva
+         Tyrone Alô
+         Raí Oliveira
+         Gustavo Ribeiro
+         Gabriel Alves
+         Willian Evangelista Silva
 */
 
 function mminfinitok(lambda, u, K, n) {
 
 
-    const lambdaN = lambN();
+    const lambdan = lambN()
     const un = Un();
     const ro = RO();
-    const en = EN();
+    const eN = EN();
 
 
     function lambN() {
@@ -39,10 +39,12 @@ function mminfinitok(lambda, u, K, n) {
 
     console.clear()
     console.log("\nResultados:\n")
-    console.log('Lambda N: ', lambdaN.toFixed(2));
+    console.log('Lambda N: ', parseFloat((lambdan * 100).toFixed(2)));
     console.log('Un: ', un.toFixed(2));
     console.log('Intensidade de tráfego: ', ro.toFixed(2));
-    console.log('Clientes no sistema: ', en.toFixed(2));
+    console.log('Clientes no sistema: ', eN.toFixed(2));
+
+    return { lambdan, un, ro, eN }
 }
 
 module.exports = mminfinitok

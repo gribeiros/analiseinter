@@ -9,16 +9,16 @@ Alunos:  Aurélia Lima
 */
 function mmm(m, y, u) {
 
-    let ro = Ro().toFixed(2);
-    let p1 = P0().toFixed(2);
-    let p2 = Pn().toFixed(5);
-    let pFila = PFila().toFixed(2);
-    let c = C().toFixed(2);
-    let e = E().toFixed(2);
-    let eN = eNW().toFixed(2);
-    let eS = eNS().toFixed(2);
-    let eNN = eNW() + eNS();
-    let eW = EW().toFixed(2);
+    let ro = Ro().toFixed(3);
+    let p1 = P0().toFixed(3);
+    let p2 = Number(Pn()).toFixed(3)
+    let p_fila = PFila().toFixed(3);
+    let c = C().toFixed(3);
+    let e = E().toFixed(3);
+    let en = eNW().toFixed(3);
+    let es = eNS().toFixed(3);
+    let enn = eNW() + eNS();
+    let ew = EW().toFixed(3);
     //Exemplo do Slide
 
     function Ro() {
@@ -70,7 +70,7 @@ function mmm(m, y, u) {
     }
 
     function eNW() {
-        return (ro * pFila) / (1 - ro)
+        return (ro * p_fila) / (1 - ro)
     }
 
     function eNS() {
@@ -78,7 +78,7 @@ function mmm(m, y, u) {
     }
 
     function EW() {
-        return pFila / (m * u * (1 - ro));
+        return p_fila / (m * u * (1 - ro));
     }
 
     console.clear()
@@ -88,11 +88,13 @@ function mmm(m, y, u) {
     console.log('\nP0 = ' + p1);
     console.log('\nC(m,u) = ' + c);
     console.log('\nE[s] = ' + e);
-    console.log('\nP[fila] = ' + pFila);
-    console.log('\nE[nw] = ' + eN);
-    console.log('\nE[ns] = ' + eS);
-    console.log('\nE[n] = ' + eNN.toFixed(2));
-    console.log('\nE[w] = ' + eW + '\n');
+    console.log('\nP[fila] = ' + p_fila);
+    console.log('\nE[nw] = ' + en);
+    console.log('\nE[ns] = ' + es);
+    console.log('\nE[n] = ' + enn.toFixed(2));
+    console.log('\nE[w] = ' + ew + '\n');
+
+    return { ro, p2, p1, c, e, p_fila, en, es, enn, ew }
 }
 
 module.exports = mmm

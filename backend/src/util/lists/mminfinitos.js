@@ -9,10 +9,10 @@ Alunos:  Aurélia Lima
 
 function mminfinitos(y, u, n, porc) {
 
-    let p0 = porc / 100;
+    let p_zero = porc / 100;
     let ro = Ro().toFixed(2);
-    let pN = Pn().toFixed(5);
-    let eS = Es().toFixed(2);
+    let pn = Pn().toFixed(5);
+    let es = Es().toFixed(2);
 
     function Ro() {
         return y / u;
@@ -28,7 +28,7 @@ function mminfinitos(y, u, n, porc) {
     }
 
     function Pn() {
-        return ((ro ** 5) / fatorial(n)) * p0;
+        return ((ro ** 5) / fatorial(n)) * p_zero;
     }
 
     function Es() {
@@ -38,8 +38,11 @@ function mminfinitos(y, u, n, porc) {
     console.clear()
     console.log("\nResultados:\n")
     console.log('\nP = ' + ro)
-    console.log('\nPn = ' + pN)
+    console.log('\nPn = ' + pn)
     console.log('\nE[n] = ' + ro)
-    console.log('\nE[s] = ' + eS)
+    console.log('\nE[s] = ' + es)
+
+    return { ro, pn, es }
+
 }
 module.exports = mminfinitos

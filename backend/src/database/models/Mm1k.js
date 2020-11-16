@@ -3,16 +3,46 @@ const { Model, DataTypes } = require('sequelize');
 class Mm1k extends Model {
     static init(sequelize) {
         super.init({
-            ro: DataTypes.STRING,
-            p_zero: DataTypes.STRING,
-            enw: DataTypes.STRING,
-            lambdan: DataTypes.STRING,
-            uti: DataTypes.STRING,
-            lambdal: DataTypes.STRING,
-            ew: DataTypes.STRING,
-            en: DataTypes.STRING,
-            pn: DataTypes.STRING,
-            enw: DataTypes.STRING
+            ro: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            p_zero: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            enw: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            lambdan: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            uti: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            lambdal: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            ew: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            en: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            pn: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            enw: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            }
         },
             {
                 sequelize,

@@ -18,11 +18,6 @@ module.exports = {
         allowNull: false,
       }
       ,
-      ro: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      }
-      ,
       es: {
         type: Sequelize.STRING,
         allowNull: false,

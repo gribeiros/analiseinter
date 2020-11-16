@@ -3,10 +3,22 @@ const { Model, DataTypes } = require('sequelize');
 class Mminfinitok extends Model {
     static init(sequelize) {
         super.init({
-            lambdan: DataTypes.STRING,
-            un: DataTypes.STRING,
-            ro: DataTypes.STRING,
-            en: DataTypes.STRING
+            lambdan: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            un: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            ro: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            en: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            }
         },
             {
                 sequelize,
@@ -20,3 +32,4 @@ class Mminfinitok extends Model {
 }
 
 module.exports = Mminfinitok;
+

@@ -3,10 +3,22 @@ const { Model, DataTypes } = require('sequelize');
 class Mminfinito extends Model {
     static init(sequelize) {
         super.init({
-            ro: DataTypes.STRING,
-            pn: DataTypes.STRING,
-            ro: DataTypes.STRING,
-            es: DataTypes.STRING
+            ro: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            pn: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            ro: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            es: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            }
         },
             {
                 sequelize,

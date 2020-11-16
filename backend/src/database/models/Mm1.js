@@ -3,15 +3,42 @@ const { Model, DataTypes } = require('sequelize');
 class Mm1 extends Model {
     static init(sequelize) {
         super.init({
-            usage: DataTypes.STRING,
-            zero_user: DataTypes.STRING,
-            n_user: DataTypes.STRING,
-            more_users: DataTypes.STRING,
-            more_than_one_users: DataTypes.STRING,
-            resposta: DataTypes.STRING,
-            waiting: DataTypes.STRING,
-            media_user1: DataTypes.STRING,
-            req_fila: DataTypes.STRING,
+            usage: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            zero_user: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            n_user: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            more_users: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            more_than_one_users: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            resposta: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            waiting: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            media_user1: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
+            req_fila: {
+                type: DataTypes.STRING,
+                defaultValue: "Infinity"
+            },
         },
             {
                 sequelize,

@@ -159,51 +159,67 @@ module.exports = {
 
         return res.status(200).json({ status: 'save' })
     },
-    //aqui
+
     async saveMinfinitok(req, res) {
 
-        const { m, B, lamb, u, n, name, user_id } = req.body
+        const { lambda, u, K, n, name, user_id } = req.body
+        try {
+            let { lambdan, un, ro, eN } = mminfinitok(lambda, u, K, n)
 
-        let { lamb_n_m, pb, lamb1, p_zero, p_n, u1, en, en_w, es, ew } = mm1b(m, B, lamb, u, n)
+            console.log({ lambdan, un, ro, eN })
 
-        const list = await Mminfinitok.create({ lamb_n_m, pb, lamb1, p_zero, p_n, u1, en, en_w, es, ew })
-        await Results.create({ name, mm1b_id: list.id, user_id })
 
-        return res.status(200).json({ status: 'save' })
+            const list = await Mminfinitok.create({ lambdan, un, ro, eN })
+            await Results.create({ name, mminfinitok_id: list.id, user_id })
+
+            return res.status(200).json({ status: 'save' })
+        } catch (error) {
+            console.error(error)
+        }
+
+
     },
 
     async saveMminifinitos(req, res) {
 
-        const { m, B, lamb, u, n, name, user_id } = req.body
+        const { y, u, n, porc, name, user_id } = req.body
 
-        let { lamb_n_m, pb, lamb1, p_zero, p_n, u1, en, en_w, es, ew } = mm1b(m, B, lamb, u, n)
+        let { ro, pn, es } = mminfinitos(y, u, n, porc)
 
-        const list = await Mminfinito.create({ lamb_n_m, pb, lamb1, p_zero, p_n, u1, en, en_w, es, ew })
-        await Results.create({ name, mm1b_id: list.id, user_id })
+        const list = await Mminfinito.create({ ro, pn, es })
+
+        await Results.create({ name, mminfinito_id: list.id, user_id })
 
         return res.status(200).json({ status: 'save' })
     },
 
     async saveMmm(req, res) {
 
-        const { m, B, lamb, u, n, name, user_id } = req.body
+        const { m, y, u, name, user_id } = req.body
 
-        let { lamb_n_m, pb, lamb1, p_zero, p_n, u1, en, en_w, es, ew } = mm1b(m, B, lamb, u, n)
+        try {
 
-        const list = await Mmm.create({ lamb_n_m, pb, lamb1, p_zero, p_n, u1, en, en_w, es, ew })
-        await Results.create({ name, mm1b_id: list.id, user_id })
+            let { ro, p2, p1, c, e, p_fila, en, es, enn, ew } = mmm(m, y, u)
 
-        return res.status(200).json({ status: 'save' })
+            const list = await Mmm.create({ ro, p2, p1, c, e, p_fila, en, es, enn, ew })
+            await Results.create({ name, mmm_id: list.id, user_id })
+
+            return res.status(200).json({ status: 'save' })
+        } catch (error) {
+            console.error(error)
+            return res.status(500).json(error)
+        }
+
     },
 
     async saveMmmb(req, res) {
 
-        const { m, B, lamb, u, n, name, user_id } = req.body
+        const { m, B, lambda, u, n, name, user_id } = req.body
 
-        let { lamb_n_m, pb, lamb1, p_zero, p_n, u1, en, en_w, es, ew } = mm1b(m, B, lamb, u, n)
+        let { ro, p0, pb, pn, loss, en, enw, es, ew } = mmmb(m, B, lambda, u, n)
 
-        const list = await Mmmb.create({ lamb_n_m, pb, lamb1, p_zero, p_n, u1, en, en_w, es, ew })
-        await Results.create({ name, mm1b_id: list.id, user_id })
+        const list = await Mmmb.create({ ro, p0, pb, pn, loss, en, enw, es, ew })
+        await Results.create({ name, mmmb_id: list.id, user_id })
 
         return res.status(200).json({ status: 'save' })
     },
