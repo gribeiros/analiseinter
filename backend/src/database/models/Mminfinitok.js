@@ -3,10 +3,10 @@ const { Model, DataTypes } = require('sequelize');
 class Mminfinitok extends Model {
     static init(sequelize) {
         super.init({
-            lambdan: DataTypes.FLOAT,
-            un: DataTypes.FLOAT,
-            ro: DataTypes.FLOAT,
-            en: DataTypes.FLOAT
+            lambdan: DataTypes.STRING,
+            un: DataTypes.STRING,
+            ro: DataTypes.STRING,
+            en: DataTypes.STRING
         },
             {
                 sequelize,

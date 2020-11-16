@@ -9,52 +9,47 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      ro: {
-        type: Sequelize.FLOAT,
+      usage: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
-      pn: {
-        type: Sequelize.FLOAT,
+      zero_user: {
+        type: Sequelize.STRING,
         allowNull: false,
       }
       ,
-      p_zero: {
-        type: Sequelize.FLOAT,
+      n_user: {
+        type: Sequelize.STRING,
         allowNull: false,
       }
       ,
-      cmu: {
-        type: Sequelize.FLOAT,
+      more_users: {
+        type: Sequelize.STRING,
         allowNull: false,
       }
       ,
-      es: {
-        type: Sequelize.FLOAT,
+      more_than_one_users: {
+        type: Sequelize.STRING,
         allowNull: false,
       }
       ,
-      p_fila: {
-        type: Sequelize.FLOAT,
+      resposta: {
+        type: Sequelize.STRING,
         allowNull: false,
       }
       ,
-      enw: {
-        type: Sequelize.FLOAT,
+      waiting: {
+        type: Sequelize.STRING,
         allowNull: false,
       }
       ,
-      ens: {
-        type: Sequelize.FLOAT,
+      media_user1: {
+        type: Sequelize.STRING,
         allowNull: false,
       }
       ,
-      en: {
-        type: Sequelize.FLOAT,
-        allowNull: false,
-      }
-      ,
-      ew: {
-        type: Sequelize.FLOAT,
+      req_fila: {
+        type: Sequelize.STRING,
         allowNull: false,
       }
     })

@@ -11,16 +11,16 @@ Alunos:  Aurélia Lima
 function mm1b(m, B, lamb, u, n) {
 
 	let ro = Ro(lamb, u);
-	let lambNN = taxaServConst(lamb, m, B);
+	let lamb_n_m = taxaServConst(lamb, m, B);
 	let pb = pB(ro, B);
 	let lamb1 = taxaPerda(lamb, pb);
-	let pZero = p0(ro, B);
-	let pN = Pn(ro, m, B);
+	let p_zero = p0(ro, B);
+	let p_n = P_n(ro, m, B);
 	let u1 = U(ro, pb);
 	let en = En(ro, B);
-	let enW = EnW(ro, B);
+	let en_w = EnW(ro, B);
 	let es = Es(en, lamb, ro, pb);
-	let ew = Ew(enW, lamb, pb);
+	let ew = Ew(en_w, lamb, pb);
 
 	function Ro(lamb, u) {
 		return lamb / u;
@@ -48,7 +48,7 @@ function mm1b(m, B, lamb, u, n) {
 		return ((1 - ro) / (1 - (ro ** b)));
 	}
 
-	function Pn(ro, m, B) {
+	function P_n(ro, m, B) {
 		b = B + 1;
 		return ((1 - ro) / (1 - (ro ** b)) * ro ** m);
 	}
@@ -79,16 +79,29 @@ function mm1b(m, B, lamb, u, n) {
 	console.clear();
 	console.log("\nResultados:\n")
 	console.log("ρ = " + ro.toFixed(2));
-	console.log("Taxa de Serviço Constante: " + lambNN);
+	console.log("Taxa de Serviço Constante: " + lamb_n_m);
 	console.log("pB =  " + pb.toFixed(2));
 	console.log("Taxa de Perda (λ´):" + lamb1.toFixed(2));
-	console.log("P0 = " + pZero.toFixed(2));
-	console.log("Pn = " + pN.toFixed(2));
+	console.log("P0 = " + p_zero.toFixed(2));
+	console.log("p_n = " + p_n.toFixed(2));
 	console.log("Utilização = " + u1.toFixed(2));
 	console.log("E[n] = " + en.toFixed(2) + " usuarios no sistema");
-	console.log("E[nw] = " + enW.toFixed(2) + " media de user no sistema");
+	console.log("E[nw] = " + en_w.toFixed(2) + " media de user no sistema");
 	console.log("E[s] = " + es.toFixed(2) + " tempo medio de resposta");
 	console.log("E[w] = " + ew.toFixed(2) + " tempo medio de espera");
+
+	return {
+		lamb_n_m,
+		pb,
+		lamb1,
+		p_zero,
+		p_n,
+		u1,
+		en,
+		en_w,
+		es,
+		ew
+	}
 
 }
 module.exports = mm1b

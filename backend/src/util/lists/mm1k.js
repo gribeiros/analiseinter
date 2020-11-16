@@ -1,17 +1,16 @@
 
 /* 
 Alunos:  Aurélia Lima
-		 Tyrone Alô
-		 Raí Oliveira
-		 Gustavo Ribeiro
-		 Gabriel Alves
-		 Willian Evangelista Silva
+         Tyrone Alô
+         Raí Oliveira
+         Gustavo Ribeiro
+         Gabriel Alves
+         Willian Evangelista Silva
 */
 
 function mm1k(m, lambda, u, K, n) {
 
-    const un = u;
-    const p0 = P0();
+    const p_zero = P0();
     const ro = RO();
     const lambdan = lambN();
     const pn = pN();
@@ -37,7 +36,7 @@ function mm1k(m, lambda, u, K, n) {
 
     function pN() {
         if (0 <= n <= K) {
-            return ((lambda / u) ** n) * (fatorial(K) / fatorial(K - n)) * p0
+            return ((lambda / u) ** n) * (fatorial(K) / fatorial(K - n)) * p_zero
         }
         else if (n > K) {
             return 0;
@@ -62,11 +61,11 @@ function mm1k(m, lambda, u, K, n) {
     }
 
     function ENW() {
-        return K - (lambda - u / lambda) * (1 - p0)
+        return K - (lambda - u / lambda) * (1 - p_zero)
     }
 
     function EN() {
-        return enw + (1 - p0)
+        return enw + (1 - p_zero)
     }
 
     function EW() {
@@ -78,7 +77,7 @@ function mm1k(m, lambda, u, K, n) {
     }
 
     function lambdaL() {
-        return u * (1 - p0)
+        return u * (1 - p_zero)
     }
 
     function soma() {
@@ -92,7 +91,7 @@ function mm1k(m, lambda, u, K, n) {
     console.clear()
     console.log("\nResultados:\n")
     console.log('p', ro.toFixed(2))
-    console.log('p0: ', p0.toFixed(4))
+    console.log('P0: ', p_zero.toFixed(4))
     console.log('E[nw]: ', enw.toFixed(2))
     console.log('Lambda N: ', lambdan)
     console.log('Utilização: ', uti.toFixed(2))
@@ -100,7 +99,19 @@ function mm1k(m, lambda, u, K, n) {
     console.log('E[w]: ', ew.toFixed(2))
     console.log('En: ', en.toFixed(2))
     console.log('Pn: ', pn.toFixed(2))
-    console.log('E[nw]: ', enw.toFixed(2))
+
+    return {
+        p_zero,
+        ro,
+        lambdan,
+        pn,
+        enw,
+        en,
+        uti,
+        lambdal,
+        ew,
+        es
+    }
 }
 
 module.exports = mm1k

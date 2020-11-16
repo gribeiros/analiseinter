@@ -3,16 +3,15 @@ const { Model, DataTypes } = require('sequelize');
 class Mm1 extends Model {
     static init(sequelize) {
         super.init({
-            ro: DataTypes.FLOAT,
-            pn: DataTypes.FLOAT,
-            p_zero: DataTypes.FLOAT,
-            cmu: DataTypes.FLOAT,
-            es: DataTypes.FLOAT,
-            p_fila: DataTypes.FLOAT,
-            enw: DataTypes.FLOAT,
-            ens: DataTypes.FLOAT,
-            en: DataTypes.FLOAT,
-            ew: DataTypes.FLOAT
+            usage: DataTypes.STRING,
+            zero_user: DataTypes.STRING,
+            n_user: DataTypes.STRING,
+            more_users: DataTypes.STRING,
+            more_than_one_users: DataTypes.STRING,
+            resposta: DataTypes.STRING,
+            waiting: DataTypes.STRING,
+            media_user1: DataTypes.STRING,
+            req_fila: DataTypes.STRING,
         },
             {
                 sequelize,

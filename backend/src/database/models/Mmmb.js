@@ -3,16 +3,16 @@ const { Model, DataTypes } = require('sequelize');
 class Mmmb extends Model {
     static init(sequelize) {
         super.init({
-            ro: DataTypes.FLOAT,
-            p0: DataTypes.FLOAT,
-            pb: DataTypes.FLOAT,
-            pn: DataTypes.FLOAT,
-            loss: DataTypes.FLOAT,
-            lambda_l: DataTypes.FLOAT,
-            en: DataTypes.FLOAT,
-            enw: DataTypes.FLOAT,
-            es: DataTypes.FLOAT,
-            ew: DataTypes.FLOAT
+            ro: DataTypes.STRING,
+            p0: DataTypes.STRING,
+            pb: DataTypes.STRING,
+            pn: DataTypes.STRING,
+            loss: DataTypes.STRING,
+            lambda_l: DataTypes.STRING,
+            en: DataTypes.STRING,
+            enw: DataTypes.STRING,
+            es: DataTypes.STRING,
+            ew: DataTypes.STRING
         },
             {
                 sequelize,
