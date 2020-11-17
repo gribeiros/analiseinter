@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react'
 import './Home.css'
 import logo from '../../assets/images/brabus.svg'
