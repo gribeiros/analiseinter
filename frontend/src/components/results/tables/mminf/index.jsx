@@ -37,9 +37,9 @@ const TableMMInf = () => {
             {data.map((r) => {
               { { console.log("r", r) } }
               return <tr>
-                <td>{r.mminfinito.ro}</td>
-                <td>{r.mminfinito.pn}</td>
-                <td>{r.mminfinito.es}</td>
+                <td>{Number(r.mminfinito.ro).toFixed(2)}</td>
+                <td>{Number(r.mminfinito.pn).toFixed(2)}</td>
+                <td>{Number(r.mminfinito.es).toFixed(2)}</td>
               </tr>
             })}
           </tbody>

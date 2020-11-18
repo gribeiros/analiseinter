@@ -42,23 +42,23 @@ const TableMM1 = () => {
             {data.map((r) => {
               { { console.log("mm1", r) } }
               return <tr>
-                <td>{r.mm1.usage}</td>
-                <td>{r.mm1.zero_user}</td>
-                <td>{r.mm1.n_user}</td>
-                <td>{r.mm1.more_users}</td>
-                <td>{r.mm1.more_than_one_users}</td>
-                <td>{r.mm1.resposta}</td>
-                <td>{r.mm1.waiting}</td>
-                <td>{r.mm1.media_user1}</td>
-                <td>{r.mm1.req_fila}</td>
+                <td>{Number(r.mm1.usage).toFixed(2)}</td>
+                <td>{Number(r.mm1.zero_user).toFixed(2)}</td>
+                <td>{Number(r.mm1.n_user).toFixed(2)}</td>
+                <td>{Number(r.mm1.more_users).toFixed(2)}</td>
+                <td>{Number(r.mm1.more_than_one_users).toFixed(2)}</td>
+                <td>{Number(r.mm1.resposta).toFixed(2)}</td>
+                <td>{Number(r.mm1.waiting).toFixed(2)}</td>
+                <td>{Number(r.mm1.media_user1).toFixed(2)}</td>
+                <td>{Number(r.mm1.req_fila).toFixed(2)}</td>
               </tr>
             })}
           </tbody>
         </Table>
-        </div>
-      : 
+      </div>
+      :
       <div className="loading-div"><Spinner style={{ width: '4rem', height: '4rem' }} /></div>
-      
+
   )
 }
 

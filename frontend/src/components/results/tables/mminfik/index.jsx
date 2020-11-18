@@ -39,10 +39,10 @@ const TableMMInfK = () => {
             {data.map((r) => {
               { { console.log("r", r) } }
               return <tr>
-                <td>{r.mminfinitok.lambdan}</td>
-                <td>{r.mminfinitok.un}</td>
-                <td>{r.mminfinitok.ro}</td>
-                <td>{r.mminfinitok.en}</td>
+                <td>{Number(r.mminfinitok.lambdan).toFixed(2)}</td>
+                <td>{Number(r.mminfinitok.un).toFixed(2)}</td>
+                <td>{Number(r.mminfinitok.ro).toFixed(2)}</td>
+                <td>{Number(r.mminfinitok.en).toFixed(2)}</td>
               </tr>
             })}
           </tbody>

@@ -44,16 +44,16 @@ const TableMMM = () => {
           <tbody>
             {data.map((r) => {
               return <tr>
-                <td>{r.mmm.ro}</td>
-                <td>{r.mmm.p2}</td>
-                <td>{r.mmm.p1}</td>
-                <td>{r.mmm.c}</td>
-                <td>{r.mmm.e}</td>
-                <td>{r.mmm.p_fila}</td>
-                <td>{r.mmm.en}</td>
-                <td>{r.mmm.es}</td>
-                <td>{r.mmm.enn}</td>
-                <td>{r.mmm.ew}</td>
+                <td>{Number(r.mmm.ro).toFixed(2)}</td>
+                <td>{Number(r.mmm.p2).toFixed(2)}</td>
+                <td>{Number(r.mmm.p1).toFixed(2)}</td>
+                <td>{Number(r.mmm.c).toFixed(2)}</td>
+                <td>{Number(r.mmm.e).toFixed(2)}</td>
+                <td>{Number(r.mmm.p_fila).toFixed(2)}</td>
+                <td>{Number(r.mmm.en).toFixed(2)}</td>
+                <td>{Number(r.mmm.es).toFixed(2)}</td>
+                <td>{Number(r.mmm.enn).toFixed(2)}</td>
+                <td>{Number(r.mmm.ew).toFixed(2)}</td>
               </tr>
             })}
           </tbody>

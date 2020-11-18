@@ -43,16 +43,16 @@ const TableMM1K = () => {
             {data.map((r) => {
               { { console.log("mm1k", r) } }
               return <tr>
-                <td>{r.mm1k.ro}</td>
-                <td>{r.mm1k.p_zero}</td>
-                <td>{r.mm1k.enw}</td>
-                <td>{r.mm1k.lambdan}</td>
-                <td>{r.mm1k.uti}</td>
-                <td>{r.mm1k.lambdal}</td>
-                <td>{r.mm1k.ew}</td>
-                <td>{r.mm1k.en}</td>
-                <td>{r.mm1k.pn}</td>
-                <td>{r.mm1k.enw}</td>
+                <td>{Number(r.mm1k.ro).toFixed(2)}</td>
+                <td>{Number(r.mm1k.p_zero).toFixed(2)}</td>
+                <td>{Number(r.mm1k.enw).toFixed(2)}</td>
+                <td>{Number(r.mm1k.lambdan).toFixed(2)}</td>
+                <td>{Number(r.mm1k.uti).toFixed(2)}</td>
+                <td>{Number(r.mm1k.lambdal).toFixed(2)}</td>
+                <td>{Number(r.mm1k.ew).toFixed(2)}</td>
+                <td>{Number(r.mm1k.en).toFixed(2)}</td>
+                <td>{Number(r.mm1k.pn).toFixed(2)}</td>
+                <td>{Number(r.mm1k.enw).toFixed(2)}</td>
               </tr>
             })}
           </tbody>

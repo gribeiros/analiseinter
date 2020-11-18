@@ -41,16 +41,16 @@ const TableMMMB = () => {
           <tbody>
             {data.map((r) => {
               return <tr>
-                <td>{r.mmmb.ro}</td>
-                <td>{r.mmmb.p0}</td>
-                <td>{r.mmmb.pb}</td>
-                <td>{r.mmmb.pn}</td>
-                <td>{r.mmmb.loss}</td>
-                <td>{r.mmmb.lambda_l}</td>
-                <td>{r.mmmb.en}</td>
-                <td>{r.mmmb.enw}</td>
-                <td>{r.mmmb.es}</td>
-                <td>{r.mmmb.ew}</td>
+                <td>{Number(r.mmmb.ro).toFixed(2)}</td>
+                <td>{Number(r.mmmb.p0).toFixed(2)}</td>
+                <td>{Number(r.mmmb.pb).toFixed(2)}</td>
+                <td>{Number(r.mmmb.pn).toFixed(2)}</td>
+                <td>{Number(r.mmmb.loss).toFixed(2)}</td>
+                <td>{Number(r.mmmb.lambda_l).toFixed(2)}</td>
+                <td>{Number(r.mmmb.en).toFixed(2)}</td>
+                <td>{Number(r.mmmb.enw).toFixed(2)}</td>
+                <td>{Number(r.mmmb.es).toFixed(2)}</td>
+                <td>{Number(r.mmmb.ew).toFixed(2)}</td>
               </tr>
             })}
           </tbody>

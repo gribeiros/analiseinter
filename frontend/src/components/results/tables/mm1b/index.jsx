@@ -43,15 +43,15 @@ const Tablemmm1b = () => {
             {data.map((r) => {
               { { console.log("mm1b", r) } }
               return <tr>
-                <td>{r.mmm1b.pb}</td>
-                <td>{r.mmm1b.lamb1}</td>
-                <td>{r.mmm1b.p_zero}</td>
-                <td>{r.mmm1b.p_n}</td>
-                <td>{r.mmm1b.u1}</td>
-                <td>{r.mmm1b.en}</td>
-                <td>{r.mmm1b.en_w}</td>
-                <td>{r.mmm1b.es}</td>
-                <td>{r.mmm1b.ew}</td>
+                <td>{Number(r.mmm1b.pb).toFixed(2)}</td>
+                <td>{Number(r.mmm1b.lamb1).toFixed(2)}</td>
+                <td>{Number(r.mmm1b.p_zero).toFixed(2)}</td>
+                <td>{Number(r.mmm1b.p_n).toFixed(2)}</td>
+                <td>{Number(r.mmm1b.u1).toFixed(2)}</td>
+                <td>{Number(r.mmm1b.en).toFixed(2)}</td>
+                <td>{Number(r.mmm1b.en_w).toFixed(2)}</td>
+                <td>{Number(r.mmm1b.es).toFixed(2)}</td>
+                <td>{Number(r.mmm1b.ew).toFixed(2)}</td>
               </tr>
             })}
           </tbody>
