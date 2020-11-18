@@ -4,7 +4,7 @@ import { Form, Input } from 'reactstrap';
 const MM1K = () => {
   return (
     <Form >
-      <label>Lista M/M/1</label>
+      <label>Lista M/M/1//K</label>
             <br />
             <Input placeholder="Servidores" type="number" name="Capacidade" />
             <br />

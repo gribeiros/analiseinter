@@ -51,9 +51,9 @@ module.exports = {
     },
 
     async findOne(req, res) {
-        const { cpf } = req.params
+        const { id } = req.params
 
-        const user = await User.findOne({ where: { cpf: cpf }, attributes: { exclude: 'password_hash' } })
+        const user = await User.findByPk(id,{  attributes: { exclude: 'password_hash' } })
 
         if (user) {
             return res.status(200).json(user);

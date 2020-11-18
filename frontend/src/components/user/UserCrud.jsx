@@ -6,8 +6,8 @@ const headerProps = {
     icon:'user-circle-o',
     title:'Meu Perfil',
 }
-
-const baseUrl = 'http://localhost:8080/FindByCPF'
+ 
+const baseUrl = 'http://localhost:8080/user/'
 
 const initialState ={
     user:{name:'', cpf:'' ,email:''},

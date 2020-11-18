@@ -4,7 +4,7 @@ import { Form, Input } from 'reactstrap';
 const MMINFK = () => {
   return (
     <Form >
-      <label>Lista M/M/1</label>
+      <label>Lista M/M/(infinitos)//K</label>
             <br />
             <Input placeholder="Taxa media de requisição" type="number" name="Capacidade" />
             <br />

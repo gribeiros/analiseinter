@@ -4,7 +4,7 @@ import { Form, Input } from 'reactstrap';
 const MMINF = () => {
   return (
     <Form >
-      <label>Lista M/M/1</label>
+      <label>Lista M/M/(infinitos)</label>
             <br />
             <Input placeholder="Chegada de clientes" type="number" name="clientes" />
             <br />

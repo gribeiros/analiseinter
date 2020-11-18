@@ -6,8 +6,8 @@ import MM1B from './mm1b/'
 import MM1K from './mm1k/'
 import MMINF from './mminf/'
 import MMINFK from './mminfik/'
-import MMMB from './mmm/'
-import MMM from './mmmb/'
+import MMMB from './mmmb/'
+import MMM from './mmm/'
 
 
 

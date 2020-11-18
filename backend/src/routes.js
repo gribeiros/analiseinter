@@ -12,7 +12,7 @@ routes.get('/', (req, res) => {
 //User
 routes.post('/user', UserController.store);
 routes.post('/user/login', UserController.login);
-routes.get('/user/:cpf', UserController.findOne);
+routes.get('/user/:id', UserController.findOne);
 routes.put('/user/:id', UserController.findOne);
 
 //Save List
@@ -25,7 +25,7 @@ routes.post('/list/mmm', ResultController.saveMmm)
 routes.post('/list/mmmb', ResultController.saveMmmb)
 
 //Find List
-routes.post('/results/:id/list', ResultController.findByList);
+routes.get('/results/:id/list/:name', ResultController.findByList);
 routes.get('/results/:id', ResultController.index)
 
 module.exports = routes;
