@@ -23,8 +23,7 @@ module.exports = {
         const { id } = req.params
         const results = await Results.findAll({
             where: { user_id: id },
-            include: [
-                {
+            include: [{
                     model: Mmmoneb,
                     as: 'mmm1b',
                     required: false,
@@ -70,8 +69,7 @@ module.exports = {
 
         const results = await Results.findAll({
             where: { user_id: id, name: name },
-            include: [
-                {
+            include: [{
                     model: Mmmoneb,
                     as: 'mmm1b',
                     required: false,
@@ -113,7 +111,7 @@ module.exports = {
     },
 
     async saveMmm1(req, res) {
-        const { requisits, capacity, users, name, user_id } = req.body
+        const { requisits, capacity, users, user_id } = req.body
 
         let { usage, zero_user, n_user, more_users, more_than_one_users, resposta, waiting, media_user1, req_fila } = mm1(requisits, capacity, users)
 
@@ -122,17 +120,19 @@ module.exports = {
         }
 
         const list = await Mm1.create({ usage, zero_user, n_user, more_users, more_than_one_users, resposta, waiting, media_user1, req_fila })
+        const name = 'mmm1'
         await Results.create({ name, mm1_id: list.id, user_id })
 
         return res.status(200).json(list)
     },
 
     async saveMm1b(req, res) {
-        const { m, B, lamb, u, n, name, user_id } = req.body
+        const { m, B, lamb, u, n, user_id } = req.body
 
         let { lamb_n_m, pb, lamb1, p_zero, p_n, u1, en, en_w, es, ew } = mm1b(m, B, lamb, u, n)
 
         const list = await Mmmoneb.create({ lamb_n_m, pb, lamb1, p_zero, p_n, u1, en, en_w, es, ew })
+        const name = 'mm1b'
         await Results.create({ name, mm1b_id: list.id, user_id })
 
         return res.status(200).json(list)
@@ -140,11 +140,12 @@ module.exports = {
 
     async saveMm1k(req, res) {
 
-        const { m, lambda, u, K, n, name, user_id } = req.body
+        const { m, lambda, u, K, n, user_id } = req.body
 
         let { p_zero, ro, lambdan, pn, enw, en, uti, lambdal, ew, es } = mm1k(m, lambda, u, K, n)
 
         const list = await Mm1k.create({ p_zero, ro, lambdan, pn, enw, en, uti, lambdal, ew, es })
+        const name = 'mm1k'
         await Results.create({ name, mm1k_id: list.id, user_id })
 
         return res.status(200).json(list)
@@ -152,7 +153,7 @@ module.exports = {
 
     async saveMinfinitok(req, res) {
 
-        const { lambda, u, K, n, name, user_id } = req.body
+        const { lambda, u, K, n, user_id } = req.body
         try {
             let { lambdan, un, ro, eN } = mminfinitok(lambda, u, K, n)
 
@@ -160,6 +161,7 @@ module.exports = {
 
 
             const list = await Mminfinitok.create({ lambdan, un, ro, eN })
+            const name = 'mminfinistok'
             Results.create({ name, mminfinitok_id: list.id, user_id })
 
             return res.status(200).json(list)
@@ -172,12 +174,12 @@ module.exports = {
 
     async saveMminifinitos(req, res) {
 
-        const { y, u, n, porc, name, user_id } = req.body
+        const { y, u, n, porc, user_id } = req.body
 
         let { ro, pn, es } = mminfinitos(y, u, n, porc)
 
         const list = await Mminfinito.create({ ro, pn, es })
-
+        const name = 'mmminfinitos'
         await Results.create({ name, mminfinito_id: list.id, user_id })
 
         return res.status(200).json(list)
@@ -185,13 +187,14 @@ module.exports = {
 
     async saveMmm(req, res) {
 
-        const { m, y, u, name, user_id } = req.body
+        const { m, y, u, user_id } = req.body
 
         try {
 
             let { ro, p2, p1, c, e, p_fila, en, es, enn, ew } = mmm(m, y, u)
 
             const list = await Mmm.create({ ro, p2, p1, c, e, p_fila, en, es, enn, ew })
+            const name = 'mmm'
             await Results.create({ name, mmm_id: list.id, user_id })
 
             return res.status(200).json(list)
@@ -204,9 +207,10 @@ module.exports = {
 
     async saveMmmb(req, res) {
 
-        const { m, B, lambda, u, n, name, user_id } = req.body
+        const { m, B, lambda, u, n, user_id } = req.body
 
         let { ro, p0, pb, pn, loss, en, enw, es, ew } = mmmb(m, B, lambda, u, n)
+        const name = 'mmmb'
 
         const list = await Mmmb.create({ ro, p0, pb, pn, loss, en, enw, es, ew })
         await Results.create({ name, mmmb_id: list.id, user_id })

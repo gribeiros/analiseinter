@@ -15,14 +15,11 @@ const MM1 = () => {
 
     async function handleSubmit(event) {
         event.preventDefault()
-        const user = localStorage.getItem('user');
-
 
         const { requisits, capacity, users } = form
         const id = localStorage.getItem('user_id')
-        console.log(id)
 
-        const response = await axios.post('http://localhost:8080/list/mm1', { requisits, capacity, users, name: "mm1", user_id: id })
+        const response = await axios.post('http://localhost:8080/list/mm1', { requisits, capacity, users, user_id: id })
         if (response.status === 200) {
         window.location.replace('/results')
         }
