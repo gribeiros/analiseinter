@@ -1,24 +1,50 @@
 import React from 'react'
 import { Form, Input } from 'reactstrap';
+import axios from 'axios'
 
-const CalcMm1 = () => {
+
+const MM1 = () => {
+
+    const [form, setForm] = React.useState({ requisits: '', capacity: '', users: '' })
+
+
+    function handleForm(event) {
+        const { name, value } = event.target
+        setForm({ ...form, [name]: value })
+    }
+
+    async function handleSubmit(event) {
+        event.preventDefault()
+        const user = localStorage.getItem('user');
+
+
+        const { requisits, capacity, users } = form
+        const id = localStorage.getItem('user_id')
+        console.log(id)
+
+        const response = await axios.post('http://localhost:8080/list/mm1', { requisits, capacity, users, name: "mm1", user_id: id })
+        if (response.status === 200) {
+        window.location.replace('/results')
+        }
+        else {
+            alert('Falha ao registrar')
+        }
+
+    }
+
     return (
-        <Form>
-            <label>Gustavo mama rola</label>
-            <Input placeholder="mm1" bsSize="lg" />
-            <Input placeholder="default" />
-            <Input placeholder="sm" bsSize="sm" />
-            <Input type="select" bsSize="lg">
-                <option>Large Select</option>
-            </Input>
-            <Input type="select">
-                <option>Default Select</option>
-            </Input>
-            <Input type="select" bsSize="sm">
-                <option>Small Select</option>
-            </Input>
+        <Form onSubmit={handleSubmit}>
+            <label>Lista M/M/1</label>
+            <br />
+            <Input placeholder="Requisições" type="number" name="requisits" value={form.requisits} onChange={handleForm} />
+            <br />
+            <Input placeholder="Capacidade" type="number" name="capacity" value={form.capacity} onChange={handleForm} />
+            <br />
+            <Input placeholder="Usuários" type="number" name="users" value={form.users} onChange={handleForm} />
+            <br />
+            <button type="submit" className="btn btn-dark btn-lg btn-block">Calcular</button>
         </Form>
     )
 }
 
-export default CalcMm1
+export default MM1

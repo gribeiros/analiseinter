@@ -8,6 +8,7 @@ module.exports = {
 
             const { name, email, password, cpf } = req.body;
 
+            console.log({ name, email, password, cpf })
             const user = await User.findOne({ where: { cpf: cpf } })
 
             if (user) {
@@ -17,6 +18,8 @@ module.exports = {
             password_hash = await bcrypt.hash(password, 8);
 
             const userCreate = await User.create({ name, email, password_hash, cpf })
+
+
 
             return res.json(userCreate)
         } catch (error) {
@@ -28,14 +31,16 @@ module.exports = {
     async login(req, res) {
         const { email, password } = req.body
 
+        console.log({ email, password })
+
         try {
             const user = await User.findOne({ where: { email: email } })
 
             if (user && await bcrypt.compare(password, user.password_hash)) {
-                return res.status(200).json({ login: true })
+                return res.status(200).json(user)
             }
             else {
-                return res.status(401).json({ error: 'E-mail ou senha errados' })
+                return res.status(401).json({ status: false, error: 'E-mail ou senha errados' })
             }
         } catch (error) {
             console.error(error)
@@ -76,7 +81,7 @@ module.exports = {
             }
 
             await User.update({ name, email, password, cpf })
-            
+
             return res.status(404).json({ status: 'Update' })
 
         } catch (error) {

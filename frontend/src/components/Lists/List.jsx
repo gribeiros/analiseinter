@@ -1,8 +1,13 @@
 import React from 'react'
 import { UncontrolledButtonDropdown, DropdownMenu, DropdownItem, DropdownToggle } from 'reactstrap';
 
-import CalcMm1 from './mm1/'
-import CalcMm2 from './mm2/'
+import MM1 from './mm1/'
+import MM1B from './mm1b/'
+import MM1K from './mm1k/'
+import MMINF from './mminf/'
+import MMINFK from './mminfik/'
+import MMMB from './mmm/'
+import MMM from './mmmb/'
 
 
 
@@ -15,22 +20,22 @@ const List = () => {
 
     function RenderResult() {
         switch (calc) {
-            case 'mm1':
-                return <CalcMm1 />
+            case 'MM1':
+                return <MM1 />
             case 'mmm':
-                return <CalcMm2 />
-            case 'mminf':
-                return <CalcMm2 />
-            case 'mm1b':
-                return <CalcMm2 />
-            case 'mmmb':
-                return <CalcMm2 />
-            case 'mm1k':
-                return <CalcMm2 />
-            case 'mminfk':
-                return <CalcMm2 />
+                return <MMM />
+            case 'MMINF':
+                return <MMINF />
+            case 'MM1B':
+                return <MM1B />
+            case 'MMMB':
+                return <MMMB />
+            case 'MM1K':
+                return <MM1K />
+            case 'MMINFK':
+                return <MMINFK />
             default:
-                return <CalcMm1 />
+                return <MM1 />
         }
     }
 
@@ -46,15 +51,15 @@ const List = () => {
                         <DropdownItem divider />
                         <DropdownItem onClick={() => selectCalc('mmm')}>M/M/m</DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem>M/M/(infinitos)</DropdownItem>
+                        <DropdownItem onClick={() => selectCalc('MMINF')}>M/M/(infinitos)</DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem>M/M/1/B</DropdownItem>
+                        <DropdownItem onClick={() => selectCalc('MM1B')}>M/M/1/B</DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem>M/M/m/B</DropdownItem>
+                        <DropdownItem onClick={() => selectCalc('MMMB')}>M/M/m/B</DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem>M/M/1//K</DropdownItem>
+                        <DropdownItem onClick={() => selectCalc('MM1K')}>M/M/1/K</DropdownItem>
                         <DropdownItem divider />
-                        <DropdownItem>M/M/(infinitos)//K</DropdownItem>
+                        <DropdownItem onClick={() => selectCalc('MMINFK')}>M/M/(infinitos)//K</DropdownItem>
                     </DropdownMenu>
                 </UncontrolledButtonDropdown>
             </div>

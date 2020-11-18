@@ -6,6 +6,7 @@ import UserCrud from '../components/user/UserCrud'
 import Login from '../components/template/Login'
 import SignUp from '../components/template/signup'
 import List from '../components/Lists/List'
+import Results from '../components/results/Results'
 
 export default props=>
     <Switch>
@@ -14,5 +15,6 @@ export default props=>
         <Route path='/login' component={Login}/>
         <Route path='/registrar' component={SignUp}/>
         <Route path='/list' component={List}/>
+        <Route path='/results' component={Results}/>
         <Redirect from="*" to="/"/>
     </Switch>

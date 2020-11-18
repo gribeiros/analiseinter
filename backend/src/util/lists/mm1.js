@@ -80,7 +80,7 @@ function mm1(requisits, capacity, users) {
     console.log("Probabilidade de ", users, "usuarios ou mais usuários no sistema :", parseFloat((more_users * 100).toFixed(2)), "%")
     console.log("Probabilidade de um ou mais usuarios no sistema: ", parseFloat((more_than_one_users * 100).toFixed(2)), "%")
     console.log("Tempo médio de resposta: ", parseFloat(resposta.toFixed(2)), "s")
-    console.log("Tempo médio de espera na fila: ", waiting, "s")
+    console.log("Tempo médio de espera na fila: ", waiting.toFixed(2), "s")
     console.log("Número médio de usuários: ", parseFloat(media_user1.toFixed(2)), "requisições")
     console.log("Número médio de requisições na fila: ", parseFloat(req_fila.toFixed(2)), "requisições" + "\n")
 

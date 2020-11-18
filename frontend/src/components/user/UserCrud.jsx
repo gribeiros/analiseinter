@@ -3,14 +3,14 @@ import Axios from 'axios'
 import Main from '../template/Main'
 
 const headerProps = {
-    icon:'users',
+    icon:'user-circle-o',
     title:'Meu Perfil',
 }
 
-const baseUrl = 'http://localhost:3001/users'
+const baseUrl = 'http://localhost:8080/FindByCPF'
 
 const initialState ={
-    user:{name:'', email:''},
+    user:{name:'', cpf:'' ,email:''},
     list: []
 }
 
@@ -91,10 +91,19 @@ export default class UserCrud extends Component{
                             placeholder="Digite seu CPF"/>
                         </div>
                     </div>
+                    <div className="col-12 col-md-6" >
+                        <div className="form-group">
+                            <label >Senha</label>
+                            <input type="password" className="form-control"
+                            name="password"
+                            onChange={e=>this.updateField(e)}
+                            placeholder="Nova senha"/>
+                        </div>
+                    </div>
                 </div>
                 <hr/>
                 <div className="row">
-                    <div className="col-12 d-flex justify-content-end">
+                    <div className="col-12 d-flex justify-content-center">
                         <button className="btn btn-primary "
                             onClick={e=> this.save(e)}>
                             Salvar

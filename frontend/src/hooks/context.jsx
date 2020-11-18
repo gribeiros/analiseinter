@@ -9,8 +9,14 @@ const LoginContext = ({ children }) => {
 
   async function login(email, password) {
     const response = await axios.post('http://localhost:8080/user/login', { email, password })
-    console.log(response.status)
-    if (response.status === 200) {
+
+    if (response.status == 200) {
+      const { cpf, email, id, name } = response.data
+      localStorage.setItem('user_id', id)
+      localStorage.setItem('user_cpf', cpf)
+      localStorage.setItem('user_email', email)
+      localStorage.setItem('user_name', name)
+
       localStorage.setItem('isLogged', true)
       setIsLogged(true)
       window.location.replace("/")
@@ -21,7 +27,7 @@ const LoginContext = ({ children }) => {
   }
 
   return (
-    <LoggedContext.Provider value={{login, isLogged }}>
+    <LoggedContext.Provider value={{ login, isLogged }}>
       {children}
     </LoggedContext.Provider>
   );

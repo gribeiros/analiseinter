@@ -28,49 +28,43 @@ module.exports = {
                     model: Mmmoneb,
                     as: 'mmm1b',
                     required: false,
-
                 },
                 {
                     model: Mm1,
                     as: 'mm1',
                     required: false,
-
                 },
                 {
                     model: Mm1k,
                     as: 'mm1k',
                     required: false,
-
                 },
                 {
                     model: Mminfinito,
                     as: 'mminfinito',
                     required: false,
-
                 },
                 {
                     model: Mminfinitok,
                     as: 'mminfinitok',
                     required: false,
-
                 },
                 {
                     model: Mmm,
                     as: 'mmm',
                     required: false,
-
                 },
                 {
                     model: Mmmb,
                     as: 'mmmb',
                     required: false,
-
                 },
 
             ],
         })
         return res.status(200).json(results)
     },
+
     async findByList(req, res) {
         const { id } = req.params
         const { name } = req.body
@@ -82,43 +76,36 @@ module.exports = {
                     model: Mmmoneb,
                     as: 'mmm1b',
                     required: false,
-
                 },
                 {
                     model: Mm1,
                     as: 'mm1',
                     required: false,
-
                 },
                 {
                     model: Mm1k,
                     as: 'mm1k',
                     required: false,
-
                 },
                 {
                     model: Mminfinito,
                     as: 'mminfinito',
                     required: false,
-
                 },
                 {
                     model: Mminfinitok,
                     as: 'mminfinitok',
                     required: false,
-
                 },
                 {
                     model: Mmm,
                     as: 'mmm',
                     required: false,
-
                 },
                 {
                     model: Mmmb,
                     as: 'mmmb',
                     required: false,
-
                 },
 
             ],
@@ -131,10 +118,14 @@ module.exports = {
 
         let { usage, zero_user, n_user, more_users, more_than_one_users, resposta, waiting, media_user1, req_fila } = mm1(requisits, capacity, users)
 
-        const list = await Mm1.create({ usage, zero_user, n_user, more_users, more_than_one_users, resposta, waiting, media_user1, req_fila })
-        await Results.create({ name, mm1_id: list.id, user_id })
+        if (waiting == 'Infinity' || waiting == undefined) {
+            waiting = "Infinity"
+        }
 
-        return res.status(200).json({ status: 'save' })
+        const list = await Mm1.create({ usage, zero_user, n_user, more_users, more_than_one_users, resposta, waiting, media_user1, req_fila })
+        const result = await Results.create({ name, mm1_id: list.id, user_id })
+
+        return res.status(200).json(result)
     },
 
     async saveMm1b(req, res) {
@@ -143,9 +134,9 @@ module.exports = {
         let { lamb_n_m, pb, lamb1, p_zero, p_n, u1, en, en_w, es, ew } = mm1b(m, B, lamb, u, n)
 
         const list = await Mmmoneb.create({ lamb_n_m, pb, lamb1, p_zero, p_n, u1, en, en_w, es, ew })
-        await Results.create({ name, mm1b_id: list.id, user_id })
+        const result = await Results.create({ name, mm1b_id: list.id, user_id })
 
-        return res.status(200).json({ status: 'save' })
+        return res.status(200).json(result)
     },
 
     async saveMm1k(req, res) {
@@ -155,9 +146,9 @@ module.exports = {
         let { p_zero, ro, lambdan, pn, enw, en, uti, lambdal, ew, es } = mm1k(m, lambda, u, K, n)
 
         const list = await Mm1k.create({ p_zero, ro, lambdan, pn, enw, en, uti, lambdal, ew, es })
-        await Results.create({ name, mm1k_id: list.id, user_id })
+        const result = await Results.create({ name, mm1k_id: list.id, user_id })
 
-        return res.status(200).json({ status: 'save' })
+        return res.status(200).json(result)
     },
 
     async saveMinfinitok(req, res) {
@@ -170,9 +161,9 @@ module.exports = {
 
 
             const list = await Mminfinitok.create({ lambdan, un, ro, eN })
-            await Results.create({ name, mminfinitok_id: list.id, user_id })
+            const result = await Results.create({ name, mminfinitok_id: list.id, user_id })
 
-            return res.status(200).json({ status: 'save' })
+            return res.status(200).json(result)
         } catch (error) {
             console.error(error)
         }
@@ -188,9 +179,9 @@ module.exports = {
 
         const list = await Mminfinito.create({ ro, pn, es })
 
-        await Results.create({ name, mminfinito_id: list.id, user_id })
+        const result = await Results.create({ name, mminfinito_id: list.id, user_id })
 
-        return res.status(200).json({ status: 'save' })
+        return res.status(200).json(result)
     },
 
     async saveMmm(req, res) {
@@ -202,9 +193,9 @@ module.exports = {
             let { ro, p2, p1, c, e, p_fila, en, es, enn, ew } = mmm(m, y, u)
 
             const list = await Mmm.create({ ro, p2, p1, c, e, p_fila, en, es, enn, ew })
-            await Results.create({ name, mmm_id: list.id, user_id })
+            const result = await Results.create({ name, mmm_id: list.id, user_id })
 
-            return res.status(200).json({ status: 'save' })
+            return res.status(200).json(result)
         } catch (error) {
             console.error(error)
             return res.status(500).json(error)
@@ -219,9 +210,9 @@ module.exports = {
         let { ro, p0, pb, pn, loss, en, enw, es, ew } = mmmb(m, B, lambda, u, n)
 
         const list = await Mmmb.create({ ro, p0, pb, pn, loss, en, enw, es, ew })
-        await Results.create({ name, mmmb_id: list.id, user_id })
+        const result = await Results.create({ name, mmmb_id: list.id, user_id })
 
-        return res.status(200).json({ status: 'save' })
+        return res.status(200).json(result)
     },
 
 }
