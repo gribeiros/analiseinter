@@ -1,29 +1,51 @@
 import React from 'react'
-import { Table } from 'reactstrap';
+import { Table, Spinner } from 'reactstrap';
+import axios from 'axios'
 
-const TableMMInf = ({ data }) => {
+async function getResult() {
+  const response = await axios.get('http://localhost:8080/results/' + localStorage.getItem('user_id') + `/list/mmminfinitos`)
+  const data = await response.data
+  return data
+}
+
+const TableMMInf = () => {
+
+  const [data, setData] = React.useState([])
+
+
+
+  React.useEffect(() => {
+    (async () => {
+      setData(await getResult())
+    })();
+  }, [])
+
 
   return (
-    <Table striped>
-      <thead>
-        <label>Lista M/M/Inf</label>
-        <tr>
-          <th>Fila</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((r) => {
-          { { console.log("r", r) } }
-          return <tr>
-            <th scope="row">{r.mminfinito.ro}</th>
-            <td>{r.mminfinito.pn}</td>
-            <td>{r.mminfinito.es}</td>
-          </tr>
-        })}
-      </tbody>
-    </Table>
+    data.length > 0 ?
+      <div style={{ overflowX: 'auto' }}>
+        <Table striped>
+          <thead>
+            <label>Lista M/M/Inf</label>
+            <tr>
+              <th>P</th>
+              <th>pN</th>
+              <th>E[n]</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((r) => {
+              { { console.log("r", r) } }
+              return <tr>
+                <td>{r.mminfinito.ro}</td>
+                <td>{r.mminfinito.pn}</td>
+                <td>{r.mminfinito.es}</td>
+              </tr>
+            })}
+          </tbody>
+        </Table>
+      </div>
+      : <div className="loading-div"><Spinner style={{ width: '4rem', height: '4rem' }} /></div>
   )
 }
 /*
